@@ -73,8 +73,9 @@
         //        html += `<div class="title">${id}</div>`
         html += `<p class="text" id="text_${eid}" onClick="hide('content_${eid}')" ><span class="subject">${entry["SUBJ"]}</span>${entry["TEXT"]}<span class="date">${entry["DATE"]}</span></p>`
         html += `<div class="entrycontent" id="content_${eid}" style="display: block; >`;
-        if ("NOTE" in entry)
+        if ("NOTE" in entry){
           html += `<p class="note">${entry["NOTE"]}</p>`
+        }
 
         if (entry["LIST"].length > 0) {
           html += `<ul>`;
