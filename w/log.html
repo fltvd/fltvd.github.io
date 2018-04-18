@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="scripts/timeline.js"></script>
+  <script src="scripts/timeline.log"></script>
+  <script src="scripts/util.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="main.css" />
+
+  <title>log</title>
+</head>
+
+<body>
+  <div id='hey'></div>
+  <script>
+    var html = "";
+    var db = new Timeline(database).parse()
+    var target = document.getElementById('hey')
+    var filterTag = (location.search.split('filterTag=')[1] || '').split('&')[0]
+
+    html += `<div id="feed">`
+
+    html += `<div id='graph_min' class="graph_min" onClick="swapVisible('graph','graph_min')" style="display:block">show graph</div>`;
+    html += `<div id='graph' class="graph" onClick="swapVisible('graph','graph_min')" style="display:none;" >`;
+
+    var graphData = GetHoursForTags(db);
+
+    for (tagtext in graphData) {
+      html += `<p>`;
+      html += `<div class="graphslot">`;  
+      html += `<span class="label">`;
+      if (tagtext == filterTag) {
+        html += `<span class="labelhilight">` + tagtext + `</span>`;
+      }
+      else { html += ` ` + tagtext; }
+      html += `</span>`;
+      html += `<span class="bar">`;
+      for (var i = 0; i < graphData[tagtext]; i++) {
+        html += '&#9646;'
+      }
+      html += `</span>`;
+      html += `</p>`;
+      html += `</div>`;
+    }
+
+    html += `</div>`
+    if( filterTag != "")
+    html += `<a class="button" href="${location.pathname}">CLEAR FILTER</a> `;
+
+    var eid = 0;
+    for (id in db) {
+      var entry = db[id];
+      var tags
+      var filter = false
+
+      if (filterTag != "") {
+        filter = true
+      }
+
+      if ("TAGS" in entry) {
+        tags = entry["TAGS"].split(" ")
+        if (tags.includes(filterTag)) {
+          filter = false
+        }
+      }
+
+      if (!filter) {
+
+        html += `<div class="entry">`
+        //        html += `<h2>${entry["TITL"]}</h2>`
+        //        html += `<div class="title">${id}</div>`
+        html += `<p class="text" id="text_${eid}" onClick="hide('content_${eid}')" ><span class="subject">${entry["SUBJ"]}</span>${entry["TEXT"]}<span class="date">${entry["DATE"]}</span></p>`
+        html += `<div class="entrycontent" id="content_${eid}" style="display: block; >`;
+        if ("NOTE" in entry)
+          html += `<p class="note">${entry["NOTE"]}</p>`
+
+        if (entry["LIST"].length > 0) {
+          html += `<ul>`;
+          for (i in entry["LIST"]) {
+            var status = entry["LIST"][i]["mark"] == '+';
+            var mark = (status == "true" ? '&#9672;' : '&#9678;');
+            html += `<li><span class="mark${status}">${mark + ' ' + entry["LIST"][i]["content"].toUpperCase()}</span></li>`;
+          }
+          html += `</ul>`;
+        }
+
+        if ("TIME" in entry) {
+          html += `<p class="time"><span class="label">${entry["TIME"]}</span> hours </p>`
+        }
+
+        if ("TAGS" in entry) {
+          for (var i = 0; i < tags.length; i++) {
+            html += `<a class="tag" href="${location.pathname + "?filterTag=" + tags[i]}">${tags[i].toUpperCase()}</a> `
+          }
+        }
+        html += `</div>`; //entry content
+        // html += `<div class="bar" width=30 height=30></div>`
+        html += `</div>`
+      }
+      eid++;
+    }
+    html += `</div>`
+    html += `<br> <hr>`
+    html += new Date().toTimeString()
+
+    target.innerHTML = html
+
+  </script>
+</body>
+
+</html>
