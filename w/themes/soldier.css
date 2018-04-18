@@ -22,20 +22,14 @@ body #feed .entry {
   color: var(--fg-lightgrey) 
 }
 
-/* body {
-	  /* background-image: url("skully.svg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom left;  }*/
-
- 
-
 body hr {
   color: rgba(255, 255, 255, 0.096)
 }
 
 body #feed {
-  width: 88%;
+  width: 80%;
+  max-width: 900px;
+  min-width: 360px;
   margin: 0 auto;
 }
 
