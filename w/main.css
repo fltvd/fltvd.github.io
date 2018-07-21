@@ -1,1 +1,157 @@
-@import url("themes/soldier.css");
+body
+{
+    font-family: 'Eina Bold', sans-serif;
+
+  --black: #201f1e;
+  --dark: #3c3836;
+  --bg: #32302f;
+  --red: #cc241d;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458588;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --grey: #a89984;
+  --orange: #d65d0e;
+}
+
+* {
+margin: 0;
+padding: 0;
+/* color: var(--grey); */
+}
+
+.root{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--bg);  /* Blue */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+    color: var(--grey);
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+
+    color: var(--green);
+    float: none;
+    clear: both;
+
+    font-size: 40px;
+    letter-spacing: 12px;
+    text-decoration: none;
+    padding: 10px 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.navitem a {
+    color: var(--grey);
+    float: none;
+    clear: both;
+
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+
+    margin: 10px 20px;
+    text-decoration: none;    
+    display: flex;
+}
+
+.nav1 {
+    color: var(--purple);   
+    margin: 0 4px; 
+}
+.nav2 {
+    color: var(--aqua);
+    margin: 0 4px;     
+}
+.nav3 {
+    color: var(--yellow);    
+    margin: 0 4px; 
+}
+.nav4 {
+    color: var(--red);    
+    margin: 0 4px; 
+}
+
+.n1 a:hover{
+    color: var(--purple);
+}
+.n2 a:hover{
+    color: var(--aqua);
+}
+.n3 a:hover{
+    color: var(--yellow);
+}
+.n4 a:hover{
+    color: var(--red);
+}
+
+.footer {
+    color: var(--grey);
+    background-color: var(--bg);  /* Blue */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark);
+    color: var(--grey);
+    flex: 1;
+}
+
+.feed {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark);
+    margin: 0;
+    width: 1000px;
+}
+
+.footer-content {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    margin: 0 8px;
+}
+
+.link-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.link-icon:hover {
+    opacity: 0.65;
+}
