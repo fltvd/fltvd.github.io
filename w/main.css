@@ -1,6 +1,6 @@
 body
 {
-    font-family: 'Eina Bold', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 
   --black: #201f1e;
   --dark: #3c3836;
@@ -21,7 +21,7 @@ padding: 0;
 /* color: var(--grey); */
 }
 
-.root{
+#root{
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -66,7 +66,8 @@ padding: 0;
     text-decoration: none;
     /* text-transform: uppercase; */
 
-    margin: 10px 20px;
+    padding: 10px 10px;
+    margin: 0px 10px;
     text-decoration: none;    
     display: flex;
 }
@@ -109,20 +110,20 @@ padding: 0;
     justify-content: center;
 }
 
-.content {
+#content {
     display: flex;
     justify-content: center;
-    background-color: var(--dark);
+    background-color: var(--black);
     color: var(--grey);
     flex: 1;
 }
 
-.feed {
+#feed {
     display: flex;
     justify-content: center;
     background-color: var(--dark);
     margin: 0;
-    width: 1000px;
+    width: 1500px;
 }
 
 .footer-content {
@@ -155,3 +156,90 @@ padding: 0;
 .link-icon:hover {
     opacity: 0.65;
 }
+
+#overlay {
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+    position: fixed; 
+    display: none; 
+}
+
+#overlaycontainer {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#floaterImage {
+    max-width: 100%;
+    max-height: 800px;
+
+    align-self: center;
+    background-color: #98971a;
+    margin: 40px 0px 0 0px;
+}
+
+#floaterLabel {
+    /* font-size: small; */
+    padding: 40px 40px;    
+    margin: 0;
+    color: var(--grey);
+    background: var(--black);
+    /* width: 100%; */
+}
+
+#gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: var(--green); */
+    margin: 0;
+    padding: 0;
+}
+
+.thumbbox {
+    /* display: flex; */
+    width: 490px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 4px;
+}
+
+.thumbbox .thumb {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 800px;
+    max-height: 800px;
+}
+
+.zoomButton
+{
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: var(--grey);
+    color: var(--grey);
+    padding: 4px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: var(--dark);
+}
+
+.zoomButton:hover
+{
+    background-color: #a8998436;
+}
+

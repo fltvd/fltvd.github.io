@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>jeremy mitchell</title>
+        <script src="scripts/template.js"></script>
+        <link rel='stylesheet' href='main.css'/>
+    </head>
+    <body>
+    <div id='root'>
+        <script>
+            var html = "";
+            var target = document.getElementById('root');
+            html = GetHeader()
+            html += GetContent();
+            html += GetFooter();
+        target.innerHTML = html;
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+var artdat = `
+
+    IMG: station.jpg
+    DATE: 2014
+    TOOLS: blender photoshop
+    TEXT: Quick 2 hour speed model.
+    TAGS: scifi
+
+    IMG: airlock.jpg
+    DATE: 2016
+    TOOLS: blender
+    TEXT: model is from a quick speed scene. Spent a little extra time on the render. 
+    TAGS: scifi
+
+    IMG: quarters.jpg
+    DATE: 2014
+    TOOLS: blender photoshop
+    TEXT: Quick 2 hour speed model
+    TAGS: scifi    
+
+    IMG: mantra.jpg
+    DATE: 2016
+    TOOLS: blender
+    TEXT: ffffff.
+    TAGS: art
+    
+    IMG: ships1.jpg
+    DATE: 2017
+    TOOLS: krita
+    TEXT: ffffff.
+    TAGS: art
+    
+    IMG: ships2.jpg
+    TOOLS: krita
+    TEXT: ffffff.
+    TAGS: art
+    
+    IMG: ships3.jpg
+    TOOLS: krita
+    TEXT: ffffff.
+    TAGS: art
+
+`;
